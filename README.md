@@ -42,7 +42,7 @@ Restrepository (просто что бы было, можно запрашива
 2) `docker run --name acquiring-redis -p 6379:6379 -d redis`;
 3) `gradle clean bootJar`;
 4) `java -jar build/libs/acquiring-service-0.0.1.jar`;
-5) go to http://localhost:8080/acquiring-service/swagger-ui/index.
+5) go to http://localhost:8080/acquiring-service/swagger-ui/index.html
 
 ### Примеры запросов
 Положить деньги на счет: `
