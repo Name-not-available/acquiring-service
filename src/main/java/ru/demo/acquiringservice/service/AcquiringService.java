@@ -1,5 +1,6 @@
 package ru.demo.acquiringservice.service;
 
+import java.util.EnumMap;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.redisson.api.RLock;
@@ -13,7 +14,6 @@ import ru.demo.acquiringservice.object.operation.OperationResponse;
 import ru.demo.acquiringservice.processors.OperationProcessor;
 
 import java.math.BigDecimal;
-import java.util.HashMap;
 import java.util.Map;
 
 @Service
@@ -22,7 +22,7 @@ import java.util.Map;
 public class AcquiringService {
 
   private final RedissonClient redissonClient;
-  private final Map<OperationType, OperationProcessor> operationProcessors = new HashMap<>();
+  private final Map<OperationType, OperationProcessor> operationProcessors = new EnumMap<>(OperationType.class);
 
   public void register(OperationType operationType, OperationProcessor operationProcessor) {
     this.operationProcessors.put(operationType, operationProcessor);

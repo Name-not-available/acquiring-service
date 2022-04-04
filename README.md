@@ -32,13 +32,13 @@ Restrepository (просто что бы было, можно запрашива
 * Донастроить gradle;
 * Добавить учет валют и их автоподтягивание курсов из ЦБ;
 * Финальный рефакторинг и фиксы по анализаторам кода;
-* и т.д и т.п..
+* и т.д. и т.п..
 
 т.к. не думаю что это имеет большое значение.
 
 ### Инструкция по запуску сервиса:
 1) `docker pull redis`;
-2) `docker run --name my-redis -p 6379:6379 -d redis`;
+2) `docker run --name acquiring-redis -p 6379:6379 -d redis`;
 3) `gradle clean bootJar`;
 4) `java -jar build/libs/acquiring-service-0.0.1.jar`;
 5) go to http://localhost:8080/acquiring-service/swagger-ui/index.

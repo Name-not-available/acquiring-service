@@ -1,6 +1,5 @@
 package ru.demo.acquiringservice.controller;
 
-import javax.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import ru.demo.acquiringservice.object.operation.OperationRequest;
@@ -15,7 +14,7 @@ public class AcquiringController {
   private final AcquiringService acquiringService;
 
   @PostMapping("/operation")
-  private OperationResponse postDeposit(@RequestBody OperationRequest operationRequest) {
+  public OperationResponse postDeposit(@RequestBody OperationRequest operationRequest) {
     return acquiringService.processOperation(operationRequest);
   }
 }
