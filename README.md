@@ -21,6 +21,7 @@ API docs: http://localhost:8080/acquiring-service/swagger-ui/index.html
 Restrepository (просто что бы было, можно запрашивать транзакции без реализации цепочки контроллер-сервис-репозиторий): http://localhost:8080/acquiring-service/repository
 
 Остановился на том что есть, не стал реализовывать:
+* Скрыть реализацию через процессоры реализовав для клиентов лишь REST интерфейс (3 POST метода, которые внутри уже будут вызывать сервис с нужным operationType);
 * Кастомную обработку исключений для ошибок (exception mapper), в том числе для HttpMessageNotReadableException и NoSuchElementException, соответственно всегда будут Internal Server Error;
 * Валидаторы для входящих обектов (будут падать NPE при отсутствии полей (!!!));
 * Ограничений для счетов со стороны БД;
